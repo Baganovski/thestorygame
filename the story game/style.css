@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+  font-family: "Special Elite", cursive;
+  margin: 0;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Phone Container */
+.phone-container {
+  width: 375px;
+  height: 667px; /* Fixed height - ESSENTIAL */
+  border-radius: 30px;
+  background-image: url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="lines" x="0" y="0" width="1" height="25" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="100%" y2="0" stroke="%23000000" stroke-width="1" opacity="0.2" /></pattern></defs><rect width="100%" height="100%" fill="url(%23lines)" /></svg>');
+  background-size: 100% 25px;
+  position: relative; /* For absolute positioning of buttons */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-right: none;
+  box-shadow: 3px 0 5px -2px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Hide any overflowing content, very important!*/
+}
+
+/*Create notebook effect*/
+.phone-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3px;
+  bottom: 0;
+  width: 3px;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+/* Restored storyInput styles */
+#storyInput {
+  width: 100%;
+  box-sizing: border-box;
+  height: 150px;
+  margin-bottom: 10px;
+  font-family: "Special Elite", cursive;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  padding: 5px;
+  line-height: 1.5;
+}
+
+/* ALL BUTTONS share base styles */
+#nextButton,
+#beginStoryButton,
+#endStoryButton,
+#resetButton,
+#backButton {
+  padding: 8px 12px;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Special Elite", cursive;
+  font-size: 14px;
+  box-shadow: 3px 3px 0px #000;
+  transition: box-shadow 0.1s ease;
+}
+
+/* Active state for all buttons */
+#nextButton:active,
+#beginStoryButton:active,
+#backButton:active,
+#endStoryButton:active,
+#resetButton:active {
+  box-shadow: 1px 1px 0px #000; /* Consistent smaller shadow */
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Positioning for Reset and Finish Story buttons */
+#resetButton {
+  background-color: #f5c2c2;
+  border-color: #d99696;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+#endStoryButton {
+  background-color: #b8e2c4;
+  border-color: #90c9a3;
+  font-weight: bold;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+/* Result area - scrollable, but buttons are OUTSIDE */
+#result {
+  overflow-y: auto;
+  max-height: 580px; /* Max height, but less than container */
+  padding-bottom: 60px; /* Add padding at bottom for button */
+}
+#game {
+  padding-bottom: 60px; /* Add padding for the button*/
+}
+
+#resultStory {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.hidden {
+  display: none;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+#storyComponents {
+  margin-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+#storyComponents p {
+  margin: 5px 0;
+}
+#reminderText {
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#componentsList {
+  font-size: 14px;
+  line-height: 1.4;
+}
+#beginStoryButton {
+  margin-top: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+#theEnd {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 24px;
+}
+#endStoryButton,
+#resetButton {
+  display: none;
+}
+#charCount {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+#result h2 {
+  text-align: center;
+  font-size: 30px;
+}
+/* NO LONGER NEED position: relative on #result */

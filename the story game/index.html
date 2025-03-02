@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Story Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="phone-container">
+      <div id="titleScreen">
+        <h1>The Story Game</h1>
+        <button id="beginStoryButton">Begin Story</button>
+      </div>
+
+      <div id="game" class="hidden">
+        <h1 id="gameTitle">Creating Story</h1>
+        <textarea
+          id="storyInput"
+          placeholder="Begin a story about anything and tap next."
+          maxlength="100"
+        ></textarea
+        ><br />
+        <div id="charCount">0/100</div>
+        <div class="error-message hidden" id="charLimitError">
+          Character limit reached!
+        </div>
+        <div class="error-message hidden" id="fullStopError">
+          Please end your sentence with a full stop.
+        </div>
+        <div id="buttonContainer">
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+        </div>
+        <p id="reminderText">
+          "Finish your sentence before passing. The Story Components will list
+          things previously referenced."
+        </p>
+        <div id="storyComponents">
+          <h3>Story Components</h3>
+          <div id="componentsList"></div>
+        </div>
+        <button id="endStoryButton">Finish Story</button>
+      </div>
+
+      <div id="result" class="hidden">
+        <h2>The Complete Story</h2>
+        <div id="resultStory"></div>
+        <p id="theEnd">The End</p>
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
